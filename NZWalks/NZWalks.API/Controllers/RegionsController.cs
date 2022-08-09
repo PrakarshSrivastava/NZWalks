@@ -102,6 +102,7 @@ namespace NZWalks.API.Controllers
                 Population = addRegionRequest.Population,
 
             };
+            // Pass domain object to Repository to persist this
             // Then We will pass the details to  Repository
             region = await regionRepository.AddAsync(region);
             // Convert Back To DTO
