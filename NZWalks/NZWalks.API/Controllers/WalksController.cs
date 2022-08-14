@@ -51,10 +51,10 @@ namespace NZWalks.API.Controllers
         public async Task<IActionResult> AddWalkAsync([FromBody] Models.DTO.AddWalkRequest addWalkRequest)
         {
             // Validate the incoming request
-            if (!(await ValidateAddWalkAsync(addWalkRequest)))
+            /*if (!(await ValidateAddWalkAsync(addWalkRequest)))
             {
                 return BadRequest(ModelState);
-            }
+            }*/
             // Convert DTO to Domain Object
             var walkDomain = new Models.Domain.Walk()
             {
@@ -79,10 +79,10 @@ namespace NZWalks.API.Controllers
         public async Task<IActionResult> UpdateWalkAsync([FromRoute] Guid id, [FromBody] Models.DTO.UpdateWalkRequest updateWalkRequest)
         {
             // Validate the incoming request
-            if (!await ValidateUpdateWalkAsync(updateWalkRequest))
+            /*if (!await ValidateUpdateWalkAsync(updateWalkRequest))
             {
                 return BadRequest(ModelState);
-            }
+            }*/
             // Convert DTO to Domain object
             var walkDomain = new Models.Domain.Walk()
             {
@@ -115,7 +115,7 @@ namespace NZWalks.API.Controllers
             return Ok(walkDTO);
         }
 
-        #region Private methods
+        /*#region Private methods
         private async Task<bool> ValidateAddWalkAsync(Models.DTO.AddWalkRequest addWalkRequest)
         {
             if (addWalkRequest == null)
@@ -202,6 +202,6 @@ namespace NZWalks.API.Controllers
 
             return true;
         }
-        #endregion
+        #endregion*/
     }
 }

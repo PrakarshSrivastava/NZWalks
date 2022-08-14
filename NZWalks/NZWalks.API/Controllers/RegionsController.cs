@@ -92,14 +92,16 @@ namespace NZWalks.API.Controllers
         {
             // we will be First Validation what Client Sends
             // Validate The Request
-            if (!ValidateAddRegionAsync(addRegionRequest))
-            {
-                //Pass Model State To show error messages
-                return BadRequest(ModelState);
-            }
+                //ctrl + k + c - for comment in one 
+                //ctrl + k + U - for uncomment in one
+            /*//if (!ValidateAddRegionAsync(addRegionRequest))
+            //{
+            //    //Pass Model State To show error messages
+            //    return BadRequest(ModelState);
+            //}*/
 
-            // We Will First convert the request(DTO) to Domain Model
-            // We Will be using Conventional Method
+             //We Will First convert the request(DTO) to Domain Model
+             //We Will be using Conventional Method
             var region = new Models.Domain.Region()
             {
                 Code = addRegionRequest.Code,
@@ -148,10 +150,10 @@ namespace NZWalks.API.Controllers
         public async Task<IActionResult> UpdateRegionAsync([FromRoute]Guid id,[FromBody] Models.DTO.UpdateRegionRequest updateRegionRequest)
         {
             // Validate the incoming request
-            if (!ValidateUpdateRegionAsync(updateRegionRequest))
+            /*if (!ValidateUpdateRegionAsync(updateRegionRequest))
             {
                 return BadRequest(ModelState);
-            }
+            }*/
 
             // Convert DTO to Domain model
             var region = new Models.Domain.Region()
@@ -181,7 +183,7 @@ namespace NZWalks.API.Controllers
 
         }
 
-        #region Private Methods
+        /*#region Private Methods
         private bool ValidateAddRegionAsync(Models.DTO.AddRegionRequest addRegionRequest)
         {
             if (addRegionRequest == null)
@@ -272,6 +274,6 @@ namespace NZWalks.API.Controllers
             return true;
         }
 
-        #endregion
+        #endregion*/
     }
 }
